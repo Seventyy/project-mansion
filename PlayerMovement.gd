@@ -15,6 +15,8 @@ func _move_relative_to_camera(movement: Vector3) -> void:
 	var facing_vector := Vector3(-sin(camera_rotation), 0, -cos(camera_rotation))
 	var cross_vector := facing_vector.cross(Vector3(0, -1, 0))
 	
+	movement = movement.normalized()
+	
 	owner.move_and_slide(
 		# poruszanie się w poziomie
 		((movement.x) * facing_vector +
