@@ -8,11 +8,37 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "InteractionHandler",
+"language": "GDScript",
+"path": "res://interaction_handler.gd"
+}, {
+"base": "Node",
+"class": "InteractionManager",
+"language": "GDScript",
+"path": "res://interaction_manager.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://utils.gd"
+} ]
+_global_script_class_icons={
+"InteractionHandler": "",
+"InteractionManager": "",
+"Utils": ""
+}
+
 [application]
 
 config/name="project-mansion"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://Debug/icon.png"
+
+[autoload]
+
+Signals="*res://signals.gd"
 
 [input]
 
@@ -36,6 +62,10 @@ right={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+3d_physics/layer_16="Interaction"
 
 [physics]
 
