@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://PlayerMovement.gd" type="Script" id=1]
-[ext_resource path="res://CameraMovement.gd" type="Script" id=2]
+[ext_resource path="res://player_movement.gd" type="Script" id=1]
+[ext_resource path="res://camera_movement.gd" type="Script" id=2]
 [ext_resource path="res://interaction_manager.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -44,9 +44,11 @@ collision_mask = 32768
 script = ExtResource( 1 )
 speed = 8.0
 gravity = 5.0
+spring_arm_path = NodePath("../SpringArm")
 
 [node name="CameraMovement" type="Node" parent="."]
 script = ExtResource( 2 )
+spring_arm_path = NodePath("../SpringArm")
 
 [node name="InteractionManager" type="Node" parent="."]
 script = ExtResource( 3 )
