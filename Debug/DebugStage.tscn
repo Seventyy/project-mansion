@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Debug/DebugInteractiveBody.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Debug/DebugNpc.tscn" type="PackedScene" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 20, 0.1, 20 )

@@ -1,0 +1,32 @@
+{
+	"color": "#fff01e54",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1645971292.json",
+	"mirror_portraits": false,
+	"name": "Player",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		},
+		{
+			"name": "debug_player_angry",
+			"path": "res://Debug/debug_player_angry.png"
+		},
+		{
+			"name": "dubug_player_happy",
+			"path": "res://Debug/dubug_player_happy.png"
+		},
+		{
+			"name": "dubug_player_thumbs_up",
+			"path": "res://Debug/dubug_player_thumbs_up.png"
+		}
+	],
+	"scale": 25
+}

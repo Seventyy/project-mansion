@@ -1,0 +1,24 @@
+{
+	"color": "#ff19c3e4",
+	"description": "Test NPC",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1645970862.json",
+	"mirror_portraits": false,
+	"name": "DebugNPC",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": ""
+		},
+		{
+			"name": "debug_npc",
+			"path": "res://Debug/debug_npc.png"
+		}
+	],
+	"scale": 25
+}

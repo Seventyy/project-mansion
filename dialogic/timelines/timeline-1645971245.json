@@ -1,0 +1,82 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1645971292.json",
+			"event_id": "dialogic_002",
+			"mirror": true,
+			"portrait": "debug_player_angry",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645971292.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Stop! You've violated the law!"
+		},
+		{
+			"action": "join",
+			"character": "character-1645970862.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "debug_npc",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": true,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645970862.json",
+			"event_id": "dialogic_001",
+			"portrait": "debug_npc",
+			"text": "lol nie"
+		},
+		{
+			"character": "character-1645971292.json",
+			"event_id": "dialogic_001",
+			"portrait": "dubug_player_happy",
+			"text": "ok"
+		},
+		{
+			"event_id": "dialogic_023",
+			"wait_seconds": 0.5
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://Debug/debug_thumbs_up.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1645971292.json",
+			"event_id": "dialogic_001",
+			"portrait": "dubug_player_thumbs_up",
+			"text": "tak trzymaj"
+		},
+		{
+			"action": "leaveall",
+			"character": "[All]",
+			"event_id": "dialogic_003"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1645971245.json",
+		"name": "DebugBasicInteraction"
+	}
+}
