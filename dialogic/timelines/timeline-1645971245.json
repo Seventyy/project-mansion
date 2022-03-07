@@ -72,6 +72,29 @@
 		{
 			"event_id": "dialogic_022",
 			"transition_duration": 1
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "co lubisz"
+		},
+		{
+			"choice": "cośtam",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "coś innego",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
 		}
 	],
 	"metadata": {

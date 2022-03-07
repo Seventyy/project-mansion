@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Debug/DebugStage.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Interface.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Spatial"]
 
@@ -10,5 +9,3 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70727, 3.13835, 3.97661 )
 
 [node name="TestStage" parent="." instance=ExtResource( 2 )]
-
-[node name="Interface" parent="." instance=ExtResource( 3 )]

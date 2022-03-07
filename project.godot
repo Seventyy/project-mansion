@@ -42,12 +42,12 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "InteractionHandler",
 "language": "GDScript",
-"path": "res://interaction_handler.gd"
+"path": "res://Components/interaction_handler.gd"
 }, {
 "base": "Node",
 "class": "InteractionManager",
 "language": "GDScript",
-"path": "res://interaction_manager.gd"
+"path": "res://Components/interaction_manager.gd"
 }, {
 "base": "Reference",
 "class": "Utils",

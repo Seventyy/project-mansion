@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://player_movement.gd" type="Script" id=1]
+[ext_resource path="res://Player/player_movement.gd" type="Script" id=1]
 [ext_resource path="res://camera_movement.gd" type="Script" id=2]
-[ext_resource path="res://interaction_manager.gd" type="Script" id=3]
+[ext_resource path="res://Components/interaction_manager.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
