@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/Camera/camera_origin.gd" type="Script" id=1]
+
+[node name="CameraOrigin" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+script = ExtResource( 1 )
+pivot_path = NodePath("Pivot")
+
+[node name="Pivot" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+
+[node name="Position" type="Spatial" parent="Pivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+
+[node name="Camera" type="Camera" parent="Pivot/Position"]
+current = true
+
+[node name="Pan" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="Control" parent="Pan"]
+anchor_bottom = 1.0
+margin_right = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Control" parent="Pan"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="Control" parent="Pan"]
+anchor_right = 1.0
+margin_bottom = 10.0
+
+[node name="Bot" type="Control" parent="Pan"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="Pan/Left" to="." method="_pan_start_left"]
+[connection signal="mouse_exited" from="Pan/Left" to="." method="_pan_stop_horizontal"]
+[connection signal="mouse_entered" from="Pan/Right" to="." method="_pan_start_right"]
+[connection signal="mouse_exited" from="Pan/Right" to="." method="_pan_stop_horizontal"]
+[connection signal="mouse_entered" from="Pan/Top" to="." method="_pan_start_top"]
+[connection signal="mouse_exited" from="Pan/Top" to="." method="_pan_stop_vertical"]
+[connection signal="mouse_entered" from="Pan/Bot" to="." method="_pan_start_bot"]
+[connection signal="mouse_exited" from="Pan/Bot" to="." method="_pan_stop_vertical"]

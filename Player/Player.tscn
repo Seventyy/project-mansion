@@ -1,8 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/player_movement.gd" type="Script" id=1]
-[ext_resource path="res://camera_movement.gd" type="Script" id=2]
-[ext_resource path="res://Components/interaction_manager.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3
@@ -15,7 +13,15 @@ mid_height = 0.8
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.905882, 0.14902, 0.345098, 1 )
 
+[sub_resource type="PrismMesh" id=4]
+left_to_right = 1.0
+size = Vector3( 0.636, 0.162, 0.554 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0.235294, 1 )
+
 [node name="Player" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
@@ -26,30 +32,17 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
-[node name="SpringArm" type="SpringArm" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.866025, 0.499999, 0, -0.5, 0.866024, 0, 1, 0 )
-spring_length = 3.0
-
-[node name="Camera" type="Camera" parent="SpringArm"]
-transform = Transform( 1, 0, 0, 0, 1, 4.47035e-07, 0, -2.98023e-08, 1, 0, 0, 0 )
-current = true
-
-[node name="RayCast" type="RayCast" parent="SpringArm/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17233e-07, -5.06639e-07 )
-enabled = true
-cast_to = Vector3( 0, 0, -10 )
-collision_mask = 32768
+[node name="Nose" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( -1, 1.25688e-14, 8.74228e-08, 4.30421e-08, -8.45762e-08, 0.492344, 1.91279e-14, 2.42722, -8.45762e-08, 0.495864, 0.0102109, 0.269026 )
+visible = false
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="PlayerMovement" type="Node" parent="."]
 script = ExtResource( 1 )
-speed = 8.0
-gravity = 5.0
-spring_arm_path = NodePath("../SpringArm")
+speed = 4.5
+gravity = 10.0
 
 [node name="CameraMovement" type="Node" parent="."]
-script = ExtResource( 2 )
-spring_arm_path = NodePath("../SpringArm")
 
 [node name="InteractionManager" type="Node" parent="."]
-script = ExtResource( 3 )
-camera_path = NodePath("../SpringArm/Camera")
