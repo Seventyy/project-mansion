@@ -1,4 +1,4 @@
-# for this script to work "Interaction" physics layer must be on 
+# for this script to work, script should be extedned, attached to Area node and only "Interaction" colision layer must be on 
 
 extends Node
 

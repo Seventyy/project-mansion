@@ -1,17 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Rooms/DebugRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Debug/DebugStage.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Camera/Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Debug/DebugNpc.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve" id=1]
+max_value = 2.5
+_data = [ Vector2( 0, 0 ), 0.0, 18.5818, 0, 0, Vector2( 0.3, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -5.3519, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=2]
+min_value = 30.0
+max_value = 60.0
+_data = [ Vector2( 0, 60 ), 0.0, 0.0, 0, 0, Vector2( 1, 30 ), -90.0, 0.0, 0, 0 ]
 
 [node name="Main" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57345, 0.933303, 0.89817 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57345, 5.77346, 4.48775 )
 
 [node name="CameraOrigin" parent="." instance=ExtResource( 3 )]
-swivl_speed = 2.5
-pan_speed = 6.5
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+swivl_speed = 90.0
+pan_speed = 2.0
+zoom_step = 0.1
+close_point = Vector2( 1, 2 )
+far_point = Vector2( 8, 10 )
+offset_curve = SubResource( 1 )
+rotation_curve = SubResource( 2 )
 player_path = NodePath("../Player")
 
-[node name="DebugRoom" parent="." instance=ExtResource( 2 )]
+[node name="TestStage" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+
+[node name="DebugNpc" parent="TestStage" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79883, 0.0734673, 4.46422 )
